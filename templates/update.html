@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Data</title>
+</head>
+<body>
+    <center><b><h1>Update Student Data</h1></b></center>
+    <form method="POST">
+        {% csrf_token %}
+    <input type="text" placeholder="Enter Name" name="name" value="{{stdata.name}}" required><br>
+    <input type="text" placeholder="Enter Subject" name="sub" value="{{stdata.sub}}" required><br>
+    <input type="email" placeholder="Enter Email" name="email" value="{{stdata.email}}" required><br>
+    <input type="submit" value="Update Data">
+    </form>
+</body>
+</html>

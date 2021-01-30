@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDApp | HOME</title>
+</head>
+<body>
+    <div>
+    <center><b><h1>CRUD Application</h1></b></center>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Subject</td>
+            <td>Email</td>
+            <td>Mobile</td>
+            <td>Action</td>
+        </tr>
+        {% for st in stdata%}
+        <tr>
+            <td>{{st.id}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.sub}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.mobile}}</td>
+            <td><a href="/update/{{st.id}}">Update</a>
+            <a href="/delete/{{st.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <hr>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+        <center><b><h1>Insert Data</h1></b></center>
+        <input type="text" placeholder="Enter Name" name="name" required><br>
+        <input type="text" placeholder="Enter Subject" name="sub" required><br>
+        <input type="email" placeholder="Enter Email" name="email" required><br>
+        <input type="submit" value="Insert Data">
+        </form>
+    </div>
+</body>
+</html>
